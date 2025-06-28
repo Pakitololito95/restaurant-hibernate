@@ -1,0 +1,7 @@
+# Ignore build output
+target/
+*.class
+
+# IntelliJ IDEA files
+.idea/
+*.iml

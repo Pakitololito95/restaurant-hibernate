@@ -11,32 +11,22 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "tische")
+public class Tisch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private String username;
+    private String name;
 
     @Column(nullable = false)
-    private String password;
+    private String status;
 
-    @Column(nullable = false)
-    private String role;
-
-    @Column(nullable = false)
-    private boolean active;
-
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "tisch")
     private List<Bestellung> bestellungen;
 
-    @OneToMany(mappedBy = "user")
-    private List<Rechnung> rechnungen;
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "tisch")
     private List<Reservierung> reservierungen;
 }
