@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -37,5 +37,5 @@ public class Bestellung {
     private Rechnung rechnung;
 
     @Column(nullable = false)
-    private Date bestellungszeit;
+    private LocalDateTime bestellungszeit;
 }
