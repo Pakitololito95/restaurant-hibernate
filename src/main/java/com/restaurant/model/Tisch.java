@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -15,8 +16,8 @@ import java.util.List;
 public class Tisch {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -24,9 +25,11 @@ public class Tisch {
     @Column(nullable = false)
     private String status;
 
-    @OneToMany(mappedBy = "tisch")
+    @OneToMany(mappedBy = "tisch", cascade = CascadeType.ALL)
     private List<Bestellung> bestellungen;
 
     @OneToMany(mappedBy = "tisch")
     private List<Reservierung> reservierungen;
+
+
 }

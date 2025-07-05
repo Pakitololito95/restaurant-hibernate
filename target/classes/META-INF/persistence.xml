@@ -1,10 +1,17 @@
-
 <persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
     <persistence-unit name="restaurantPU">
         <class>com.restaurant.model.User</class>
+        <class>com.restaurant.model.Tisch</class>
+        <class>com.restaurant.model.Bestellung</class>
+        <class>com.restaurant.model.Bestellposition</class>
+        <class>com.restaurant.model.Gericht</class>
+        <class>com.restaurant.model.Kategorie</class>
+        <class>com.restaurant.model.Rechnung</class>
+        <class>com.restaurant.model.Reservierung</class>
+
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/restaurant_db"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/test"/>
             <property name="jakarta.persistence.jdbc.user" value="restaurant_user"/>
             <property name="jakarta.persistence.jdbc.password" value="Hemija95-"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
